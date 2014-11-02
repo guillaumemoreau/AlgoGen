@@ -72,3 +72,9 @@ int  motmystere::estMeilleurQue(const genome& g) const {
     }
     return n-m;
 }
+
+ostream& operator<<(ostream &o,const motmystere& m) {
+    o << m;
+    return o;
+}
+

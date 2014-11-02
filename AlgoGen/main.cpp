@@ -7,9 +7,23 @@
 //
 
 #include <iostream>
+using namespace std;
+
+#include "motmystere.h"
+#include "population.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+
+    motmystere::setMotMystere("alea");
+    
+    // creation d'une population
+    population myPop;
+    for (int i(0) ; i<30 ; i++) {
+        genome *g = new motmystere(4);
+        myPop.getPop().push_back(g);
+    }
+    
+    cout << myPop << endl;
+    
     return 0;
 }

@@ -74,3 +74,17 @@ vector<genome*> population::generation(vector<genome*> l1,int n,int m) {
     return best;
 }
 
+void population::affiche(ostream &o) const {
+    for (int i(0) ; i<pop.size() ; i++) {
+        pop[i]->affiche(o);
+        o << ",";
+    }
+}
+
+ostream& operator<<(ostream& o,const population& p) {
+    o << "[" ;
+    p.affiche(o);
+    o << "]";
+    return o;
+}
+

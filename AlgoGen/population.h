@@ -26,7 +26,12 @@ public:
     vector<genome*> mutation(vector<genome*>);
     
     vector<genome*> generation(vector<genome*>,int n,int m);
+    
+    vector<genome *>& getPop() { return pop; }
+    
+    void affiche(ostream& o) const;
 };
 
+ostream& operator<<(ostream& o,const population& p);
 
 #endif /* defined(__AlgoGen__population__) */

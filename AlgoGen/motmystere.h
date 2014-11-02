@@ -9,6 +9,7 @@
 #ifndef __AlgoGen__motmystere__
 #define __AlgoGen__motmystere__
 
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -36,6 +37,12 @@ public:
     genome* croisement(genome *g);
     
     int estMeilleurQue(const genome& g) const;
+    
+    void affiche(ostream& o) const {
+        o << tentative;
+    }
 };
+
+ostream& operator<<(ostream &o,const motmystere& m);
 
 #endif /* defined(__AlgoGen__motmystere__) */

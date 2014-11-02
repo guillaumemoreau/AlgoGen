@@ -16,6 +16,8 @@ public:
     virtual genome* croisement(genome *g) = 0;
     
     virtual int estMeilleurQue(const genome& g) const = 0;
+    
+    virtual void affiche(ostream &o) const = 0;
 };
 
 #endif
