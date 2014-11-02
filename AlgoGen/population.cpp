@@ -17,7 +17,7 @@ using namespace std;
 */
 vector<genome*> population::selection(vector<genome*> l1,int n) {
     vector<genome*> *nBest = new vector<genome*>();
-    vector<genome*> l2;
+    vector<genome*> l2(l1.size());
     
     if (l1.size() < n) {
         cerr << "Pb de taille" << endl;
