@@ -13,6 +13,7 @@ using namespace std;
 #include "motmystere.h"
 
 float motmystere::tauxMutation = 0.05;
+string motmystere::motMystere = "alea";
 
 motmystere::motmystere(int n) {
     tentative = "";
@@ -54,6 +55,20 @@ genome* motmystere::croisement(genome *g) {
     return r;
 }
 
-bool  motmystere::estMeilleurQue(const genome& g) const {
-    return true;
+int  motmystere::estMeilleurQue(const genome& g) const {
+    int n = 0;
+    int m = 0;
+    const motmystere *mm;
+    if (typeid(&g) == typeid(this)) {
+        mm = dynamic_cast<const motmystere*>(&g);
+    }
+    for (int i(0) ; i<tentative.length() ; i++) {
+        if (tentative[i] == motMystere[i]) {
+            n++;
+        }
+        if (mm->tentative[i] == motMystere[i]) {
+            m++;
+        }
+    }
+    return n-m;
 }

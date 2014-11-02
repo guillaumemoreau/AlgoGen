@@ -35,7 +35,7 @@ public:
     
     genome* croisement(genome *g);
     
-    bool estMeilleurQue(const genome& g) const;
+    int estMeilleurQue(const genome& g) const;
 };
 
 #endif /* defined(__AlgoGen__motmystere__) */

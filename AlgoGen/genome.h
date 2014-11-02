@@ -15,7 +15,7 @@ public:
     virtual void mutation() = 0;
     virtual genome* croisement(genome *g) = 0;
     
-    virtual bool estMeilleurQue(const genome& g) const = 0;
+    virtual int estMeilleurQue(const genome& g) const = 0;
 };
 
 #endif
