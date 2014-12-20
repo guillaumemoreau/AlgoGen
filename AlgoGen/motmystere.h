@@ -41,6 +41,11 @@ public:
     void affiche(ostream& o) const {
         o << tentative;
     }
+    
+    // pour les tests unitaires
+    void setTentative(string tentative) { this->tentative = tentative; }
+    
+    string getTentative() { return this->tentative; }
 };
 
 ostream& operator<<(ostream &o,const motmystere& m);
