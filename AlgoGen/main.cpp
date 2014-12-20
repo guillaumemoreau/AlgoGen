@@ -25,5 +25,9 @@ int main(int argc, const char * argv[]) {
     
     cout << myPop << endl;
     
+    myPop.generation(myPop.getPop(), 30, 10);
+    
+    cout << myPop << endl;
+    
     return 0;
 }

@@ -55,10 +55,12 @@ genome* motmystere::croisement(genome *g) {
     return r;
 }
 
-int  motmystere::estMeilleurQue(const genome& g) const {
+int  motmystere::estMeilleurQue(const genome* g) const {
     int n = 0;
     int m = 0;
-    if (typeid(&g) != typeid(this)) {
+
+    motmystere *tmp = (motmystere *) g;
+    if (tmp == nullptr) {
         cerr << "erreur de type" << endl;
         return -1;
     }
@@ -66,7 +68,7 @@ int  motmystere::estMeilleurQue(const genome& g) const {
         if (tentative[i] == motMystere[i]) {
             n++;
         }
-        if ((dynamic_cast<const motmystere*>(&g))->tentative[i] == motMystere[i]) {
+        if (tmp->tentative[i] == motMystere[i]) {
             m++;
         }
     }

@@ -31,7 +31,7 @@ vector<genome*> population::selection(vector<genome*> l1,int n) {
         genome* best = *(l2.begin());
         vector<genome*>::iterator ibest;
         for (vector<genome*>::iterator j=l2.begin() ; j!=l2.end() ; j++) {
-            if ((*j)->estMeilleurQue(*best) > 0) {
+            if ((*j)->estMeilleurQue(best) > 0) {
                 best = *j;
                 ibest = j;
             }

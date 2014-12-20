@@ -36,7 +36,7 @@ public:
     
     genome* croisement(genome *g);
     
-    int estMeilleurQue(const genome& g) const;
+    int estMeilleurQue(const genome* g) const;
     
     void affiche(ostream& o) const {
         o << tentative;
