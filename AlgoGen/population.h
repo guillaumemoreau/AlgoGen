@@ -30,6 +30,9 @@ public:
     vector<genome *>& getPop() { return pop; }
     
     void affiche(ostream& o) const;
+    
+    int size() { return this->pop.size(); }
+    
 };
 
 ostream& operator<<(ostream& o,const population& p);
