@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A319B0EB1A068F0500124BEB"
-               BuildableName = "AlgoGen"
-               BlueprintName = "AlgoGen"
+               BlueprintIdentifier = "A319B1001A06C1F400124BEB"
+               BuildableName = "AlgoGenTests"
+               BlueprintName = "AlgoGenTests"
                ReferencedContainer = "container:AlgoGen.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A319B0EB1A068F0500124BEB"
-            BuildableName = "AlgoGen"
-            BlueprintName = "AlgoGen"
+            BlueprintIdentifier = "A319B1001A06C1F400124BEB"
+            BuildableName = "AlgoGenTests"
+            BlueprintName = "AlgoGenTests"
             ReferencedContainer = "container:AlgoGen.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -51,12 +51,19 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A319B0EB1A068F0500124BEB"
-            BuildableName = "AlgoGen"
-            BlueprintName = "AlgoGen"
+            BlueprintIdentifier = "A319B1001A06C1F400124BEB"
+            BuildableName = "AlgoGenTests"
+            BlueprintName = "AlgoGenTests"
             ReferencedContainer = "container:AlgoGen.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "DYLD_FRAMEWORK_PATH"
+            value = "/Users/moreau/Library/Developer/Xcode/DerivedData/gtest-ahmzyceqthsnhafvvpteafspurih/Build/Products/Debug"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -69,9 +76,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A319B0EB1A068F0500124BEB"
-            BuildableName = "AlgoGen"
-            BlueprintName = "AlgoGen"
+            BlueprintIdentifier = "A319B1001A06C1F400124BEB"
+            BuildableName = "AlgoGenTests"
+            BlueprintName = "AlgoGenTests"
             ReferencedContainer = "container:AlgoGen.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

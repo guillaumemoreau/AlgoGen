@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>AlgoGenTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>A319B0EB1A068F0500124BEB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A319B1001A06C1F400124BEB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

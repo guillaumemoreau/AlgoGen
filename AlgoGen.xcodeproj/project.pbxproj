@@ -8,10 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		A319B0F01A068F0500124BEB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0EF1A068F0500124BEB /* main.cpp */; };
+		A319B0F91A06929500124BEB /* population.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0F71A06929500124BEB /* population.cpp */; };
+		A319B0FC1A069C3900124BEB /* motmystere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0FA1A069C3900124BEB /* motmystere.cpp */; };
+		A319B1041A06C1F400124BEB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B1031A06C1F400124BEB /* main.cpp */; };
+		A3CBC3981A457AC7009AAF93 /* population.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0F71A06929500124BEB /* population.cpp */; };
+		A3CBC3991A457ACB009AAF93 /* motmystere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0FA1A069C3900124BEB /* motmystere.cpp */; };
+		A3CBC39B1A457C48009AAF93 /* gtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3CBC39A1A457C48009AAF93 /* gtest.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		A319B0EA1A068F0500124BEB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		A319B0FF1A06C1F400124BEB /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,6 +40,14 @@
 /* Begin PBXFileReference section */
 		A319B0EC1A068F0500124BEB /* AlgoGen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgoGen; sourceTree = BUILT_PRODUCTS_DIR; };
 		A319B0EF1A068F0500124BEB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A319B0F61A0690E900124BEB /* genome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = genome.h; sourceTree = "<group>"; };
+		A319B0F71A06929500124BEB /* population.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = population.cpp; sourceTree = "<group>"; };
+		A319B0F81A06929500124BEB /* population.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = population.h; sourceTree = "<group>"; };
+		A319B0FA1A069C3900124BEB /* motmystere.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = motmystere.cpp; sourceTree = "<group>"; };
+		A319B0FB1A069C3900124BEB /* motmystere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = motmystere.h; sourceTree = "<group>"; };
+		A319B1011A06C1F400124BEB /* AlgoGenTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgoGenTests; sourceTree = BUILT_PRODUCTS_DIR; };
+		A319B1031A06C1F400124BEB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		A3CBC39A1A457C48009AAF93 /* gtest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gtest.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/gtest-ahmzyceqthsnhafvvpteafspurih/Build/Products/Debug/gtest.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +58,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A319B0FE1A06C1F400124BEB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3CBC39B1A457C48009AAF93 /* gtest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -42,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				A319B0EE1A068F0500124BEB /* AlgoGen */,
+				A319B1021A06C1F400124BEB /* AlgoGenTests */,
 				A319B0ED1A068F0500124BEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				A319B0EC1A068F0500124BEB /* AlgoGen */,
+				A319B1011A06C1F400124BEB /* AlgoGenTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +91,22 @@
 			isa = PBXGroup;
 			children = (
 				A319B0EF1A068F0500124BEB /* main.cpp */,
+				A319B0F61A0690E900124BEB /* genome.h */,
+				A319B0F71A06929500124BEB /* population.cpp */,
+				A319B0F81A06929500124BEB /* population.h */,
+				A319B0FA1A069C3900124BEB /* motmystere.cpp */,
+				A319B0FB1A069C3900124BEB /* motmystere.h */,
 			);
 			path = AlgoGen;
+			sourceTree = "<group>";
+		};
+		A319B1021A06C1F400124BEB /* AlgoGenTests */ = {
+			isa = PBXGroup;
+			children = (
+				A3CBC39A1A457C48009AAF93 /* gtest.framework */,
+				A319B1031A06C1F400124BEB /* main.cpp */,
+			);
+			path = AlgoGenTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +129,23 @@
 			productReference = A319B0EC1A068F0500124BEB /* AlgoGen */;
 			productType = "com.apple.product-type.tool";
 		};
+		A319B1001A06C1F400124BEB /* AlgoGenTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A319B1051A06C1F400124BEB /* Build configuration list for PBXNativeTarget "AlgoGenTests" */;
+			buildPhases = (
+				A319B0FD1A06C1F400124BEB /* Sources */,
+				A319B0FE1A06C1F400124BEB /* Frameworks */,
+				A319B0FF1A06C1F400124BEB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AlgoGenTests;
+			productName = AlgoGenTests;
+			productReference = A319B1011A06C1F400124BEB /* AlgoGenTests */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +156,9 @@
 				ORGANIZATIONNAME = "Guillaume Moreau";
 				TargetAttributes = {
 					A319B0EB1A068F0500124BEB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					A319B1001A06C1F400124BEB = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
@@ -109,6 +176,7 @@
 			projectRoot = "";
 			targets = (
 				A319B0EB1A068F0500124BEB /* AlgoGen */,
+				A319B1001A06C1F400124BEB /* AlgoGenTests */,
 			);
 		};
 /* End PBXProject section */
@@ -118,7 +186,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A319B0F91A06929500124BEB /* population.cpp in Sources */,
 				A319B0F01A068F0500124BEB /* main.cpp in Sources */,
+				A319B0FC1A069C3900124BEB /* motmystere.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A319B0FD1A06C1F400124BEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3CBC3981A457AC7009AAF93 /* population.cpp in Sources */,
+				A319B1041A06C1F400124BEB /* main.cpp in Sources */,
+				A3CBC3991A457ACB009AAF93 /* motmystere.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +293,34 @@
 			};
 			name = Release;
 		};
+		A319B1061A06C1F400124BEB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/moreau/dev/local/Frameworks,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/gtest-ahmzyceqthsnhafvvpteafspurih/Build/Products/Debug",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A319B1071A06C1F400124BEB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/moreau/dev/local/Frameworks,
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/gtest-ahmzyceqthsnhafvvpteafspurih/Build/Products/Debug",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -232,6 +340,16 @@
 				A319B0F51A068F0500124BEB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A319B1051A06C1F400124BEB /* Build configuration list for PBXNativeTarget "AlgoGenTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A319B1061A06C1F400124BEB /* Debug */,
+				A319B1071A06C1F400124BEB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
