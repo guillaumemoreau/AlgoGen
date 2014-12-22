@@ -11,12 +11,15 @@ using namespace std;
 #include "population.h"
 
 
+bool compare_fnc(const genome *a,const genome *b) {
+    return a->estMeilleurQue(b) > 0;
+}
 
 /**
  methode bourrin : on prend n fois le meilleur...
 */
 vector<genome*> population::selection(vector<genome*> l1,int n) {
-    vector<genome*> *nBest = new vector<genome*>();
+    vector<genome*> *nBest = new vector<genome*>(n);
     vector<genome*> l2(l1.size());
     
     if (l1.size() < n) {
@@ -26,19 +29,10 @@ vector<genome*> population::selection(vector<genome*> l1,int n) {
     
     // copie de l1 dans nBest
     copy(l1.begin(), l1.end(), l2.begin());
-    for (int i(0); i<n ; i++) {
-        // on recupere le meilleur de l2 et on le supprime
-        genome* best = *(l2.begin());
-        vector<genome*>::iterator ibest;
-        for (vector<genome*>::iterator j=l2.begin() ; j!=l2.end() ; j++) {
-            if ((*j)->estMeilleurQue(best) > 0) {
-                best = *j;
-                ibest = j;
-            }
-        }
-        nBest->push_back(best);
-        l2.erase(ibest);
-    }
+    // tri de l2
+    sort(l2.begin(), l2.end(), compare_fnc);
+    // on garde les n meilleurs
+    copy(l2.begin(), l2.begin()+n,nBest->begin());
     return *nBest;
 }
 
@@ -46,10 +40,10 @@ vector<genome*> population::reproduction(vector<genome*> l1,int n) {
     vector<genome*> *repList = new vector<genome*>();
     
     for (int i(0) ; i<n ; i++) {
-        int i1 = rand()%n;
-        int i2 = rand()%n;
+        int i1 = rand()%l1.size();
+        int i2 = rand()%l1.size();
         while (i2 == i1) {
-            i2 = rand()%n;
+            i2 = rand()%l1.size();
         }
         
         repList->push_back(l1[i1]->croisement(l1[i2]));

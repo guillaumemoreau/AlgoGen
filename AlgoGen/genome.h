@@ -18,6 +18,9 @@ public:
     virtual int estMeilleurQue(const genome* g) const = 0;
     
     virtual void affiche(ostream &o) const = 0;
+    
 };
+
+bool compare_fnc(const genome *a,const genome *b);
 
 #endif
