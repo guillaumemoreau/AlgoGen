@@ -39,7 +39,7 @@ protected:
 
 
 TEST_F(TestMotMystere, population_selection) {
-    ASSERT_TRUE(myPop.size() == 30);
+    ASSERT_TRUE(myPop.size() == 4);
     vector<genome *> v = myPop.selection(myPop.getPop(),1);
     ASSERT_TRUE(v.size() == 1);
     cout << "le meilleur : " << ((motmystere*)v[0])->getTentative() << endl;
