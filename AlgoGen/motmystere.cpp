@@ -41,13 +41,13 @@ genome* motmystere::croisement(genome *g) {
     for (int i(0) ; i<n ; i++) {
         tt += this->tentative[i];
     }
-    for (int i(n+1) ; i<tentative.length() ; i++) {
-        if (typeid(g) == typeid(this)) {
-            motmystere *m = dynamic_cast<motmystere*>(g);
+    for (int i(n+1) ; i<=tentative.length() ; i++) {
+        motmystere *m = (motmystere*)(g);
+        if (g != nullptr) {
             tt += m->tentative[i];
         }
         else {
-            cerr << "pb de type" << endl;
+            cerr << "pb de type (1)" << endl;
         }
     }
     motmystere *r = new motmystere(this->tentative.length());
@@ -61,7 +61,7 @@ int  motmystere::estMeilleurQue(const genome* g) const {
 
     motmystere *tmp = (motmystere *) g;
     if (tmp == nullptr) {
-        cerr << "erreur de type" << endl;
+        cerr << "erreur de type (2)" << endl;
         return -1;
     }
     for (int i(0) ; i<tentative.length() ; i++) {

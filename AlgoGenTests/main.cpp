@@ -46,7 +46,25 @@ TEST_F(TestMotMystere, population_selection) {
     EXPECT_TRUE(((motmystere*)v[0])->getTentative() == "bbaa");
 }
 
+TEST_F(TestMotMystere, population_reproduction) {
+    ASSERT_TRUE(myPop.size() == 4);
+    
+    vector<genome*> v = myPop.reproduction(myPop.getPop(), 5);
+    EXPECT_TRUE(5 == v.size());
+    
+}
 
+TEST(test_motmystere, test_croisement) {
+    motmystere m(4); m.setTentative("bbbb");
+    motmystere n(4); n.setTentative("abab");
+
+    genome *g = m.croisement(&n);
+    motmystere *c = (motmystere*) g;
+    EXPECT_TRUE(nullptr != c);
+    EXPECT_TRUE(c->getTentative().length() == m.getTentative().length());
+    cout << c->getTentative().length() << endl;
+    
+}
 TEST(test_motmystere, test_comparaison) {
     motmystere m(4); m.setTentative("bbbb");
     motmystere n(4); n.setTentative("abab");
