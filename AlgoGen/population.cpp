@@ -63,7 +63,9 @@ vector<genome*> population::mutation(vector<genome*> l1) {
 vector<genome*> population::generation(vector<genome*> l1,int n,int m) {
     vector<genome*> best = this->selection(l1,m);
     vector<genome*> croisements = this->reproduction(best, n-m);
-    copy(croisements.begin(),croisements.end(),best.begin());
+    for (genome*& g : croisements) {
+        best.push_back(g);
+    }
     this->mutation(best);
     return best;
 }
