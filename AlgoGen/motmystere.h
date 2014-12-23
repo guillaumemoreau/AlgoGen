@@ -46,6 +46,8 @@ public:
     void setTentative(string tentative) { this->tentative = tentative; }
     
     string getTentative() { return this->tentative; }
+    
+    bool found();
 };
 
 ostream& operator<<(ostream &o,const motmystere& m);

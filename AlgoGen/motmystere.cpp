@@ -26,8 +26,8 @@ motmystere::motmystere(int n) {
 
 void motmystere::mutation() {
     for (int i(0) ; i<tentative.length() ; i++) {
-        float m = random();
-        if (m < tauxMutation) {
+        float m = random()%10000;
+        if (m < tauxMutation*10000) {
             int r = rand()%26;
             char l = 'a'+r;
             tentative[i] = l;
@@ -41,7 +41,7 @@ genome* motmystere::croisement(genome *g) {
     for (int i(0) ; i<n ; i++) {
         tt += this->tentative[i];
     }
-    for (int i(n+1) ; i<=tentative.length() ; i++) {
+    for (int i(n) ; i<tentative.length() ; i++) {
         motmystere *m = (motmystere*)(g);
         if (g != nullptr) {
             tt += m->tentative[i];
@@ -80,3 +80,6 @@ ostream& operator<<(ostream &o,const motmystere& m) {
     return o;
 }
 
+bool motmystere::found() {
+    return this->tentative == motmystere::motMystere;
+}

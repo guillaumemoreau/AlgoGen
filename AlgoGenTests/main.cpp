@@ -56,14 +56,24 @@ TEST_F(TestMotMystere, population_reproduction) {
 
 TEST(test_motmystere, test_croisement) {
     motmystere m(4); m.setTentative("bbbb");
-    motmystere n(4); n.setTentative("abab");
+    motmystere n(4); n.setTentative("aaaa");
 
     genome *g = m.croisement(&n);
     motmystere *c = (motmystere*) g;
     EXPECT_TRUE(nullptr != c);
     EXPECT_TRUE(c->getTentative().length() == m.getTentative().length());
-    cout << c->getTentative().length() << endl;
-    
+    // on examine tous les cas possibles
+    EXPECT_TRUE(c->getTentative()=="aaaa" || c->getTentative() == "bbba" ||
+                c->getTentative() == "bbaa" || c->getTentative() == "baaa");
+ 
+    g = n.croisement(&m);
+    c = (motmystere*) g;
+    EXPECT_TRUE(nullptr != c) << "ptr";
+    EXPECT_TRUE(c->getTentative().length() == m.getTentative().length()) << "lg";
+    // on examine tous les cas possibles
+    EXPECT_TRUE(c->getTentative()=="bbbb" || c->getTentative() == "abbb" ||
+                c->getTentative() == "aabb" || c->getTentative() == "aaab") << "valeur";
+
 }
 TEST(test_motmystere, test_comparaison) {
     motmystere m(4); m.setTentative("bbbb");
@@ -74,6 +84,17 @@ TEST(test_motmystere, test_comparaison) {
 
     EXPECT_TRUE(n.estMeilleurQue(&m) > 0);
     EXPECT_FALSE(m.estMeilleurQue(&n)> 0);
+}
+
+TEST(test_motmystere, test_mutation) {
+    
+    // on verifie juste que pour 100 mutations on a bien un genome different
+    // pas certain mais hautement probable...
+    motmystere m(4); m.setTentative("bbbb");
+    for (int i(0) ; i<100 ; i++) {
+        m.mutation();
+    }
+    EXPECT_TRUE(m.getTentative() != "bbbb");
 }
 
 int main(int argc, char **argv) {
