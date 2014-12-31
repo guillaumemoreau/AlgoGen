@@ -22,6 +22,9 @@ vector<genome*> population::selection(vector<genome*> l1,int n) {
     vector<genome*> *nBest = new vector<genome*>(n);
     vector<genome*> l2(l1.size());
     
+    cout << "population::selection() - input" << endl;
+    debugAfficheVecteur(l1);
+    
     if (l1.size() < n) {
         cerr << "Pb de taille" << endl;
         //@TODO : il faudra penser à lancer une exception ici !
@@ -33,6 +36,10 @@ vector<genome*> population::selection(vector<genome*> l1,int n) {
     sort(l2.begin(), l2.end(), compare_fnc);
     // on garde les n meilleurs
     copy(l2.begin(), l2.begin()+n,nBest->begin());
+    
+    cout << "resultat de selection :" << endl;
+    debugAfficheVecteur(*nBest);
+    
     return *nBest;
 }
 
@@ -53,19 +60,39 @@ vector<genome*> population::reproduction(vector<genome*> l1,int n) {
 }
 
 vector<genome*> population::mutation(vector<genome*> l1) {
+    
+    cout << "population::mutation - input" << endl;
+    debugAfficheVecteur(l1);
+    
     for (genome*& g : l1) {
         g->mutation();
     }
+    
+    cout << "population::mutation - output" << endl;
+    debugAfficheVecteur(l1);
+    
     return l1;
 }
 
 
 vector<genome*> population::generation(vector<genome*> l1,int n,int m) {
+    cout << "population::generation() - input" << endl;
+    debugAfficheVecteur(l1);
+    
     vector<genome*> best = this->selection(l1,m);
+    
+    cout << "population::generation() - selection" << endl;
+    debugAfficheVecteur(best);
+    
     vector<genome*> croisements = this->reproduction(best, n-m);
+    
+    cout << "population::generation() - croisements" << endl;
+    debugAfficheVecteur(croisements);
+    
     for (genome*& g : croisements) {
         best.push_back(g);
     }
+    
     this->mutation(best);
     return best;
 }
@@ -84,3 +111,11 @@ ostream& operator<<(ostream& o,const population& p) {
     return o;
 }
 
+void debugAfficheVecteur(vector<genome*> l) {
+    cout << "[" ;
+    for (int i(0) ; i<l.size() ; i++) {
+        l[i]->affiche(cout);
+        cout << ",";
+    }
+    cout << "]" << endl;
+}

@@ -37,4 +37,6 @@ public:
 
 ostream& operator<<(ostream& o,const population& p);
 
+void debugAfficheVecteur(vector<genome*> l);
+
 #endif /* defined(__AlgoGen__population__) */

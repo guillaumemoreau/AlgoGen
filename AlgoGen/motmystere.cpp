@@ -12,7 +12,7 @@ using namespace std;
 
 #include "motmystere.h"
 
-float motmystere::tauxMutation = 0.05;
+float motmystere::tauxMutation = 0.08;
 string motmystere::motMystere = "alea";
 
 motmystere::motmystere(int n) {
