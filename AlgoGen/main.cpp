@@ -25,7 +25,18 @@ int main(int argc, const char * argv[]) {
     
     cout << myPop << endl;
     
-    myPop.generation(myPop.getPop(), 30, 10);
+    for (int iter(0) ; iter<30 ; iter++) {
+        myPop.generation(myPop.getPop(), 30, 10);
+        for (int i(0) ; i<myPop.getPop().size() ; i++) {
+            genome *g = myPop.getPop()[i];
+            motmystere *m = (motmystere*) g;
+            if (m->found()) {
+                cout << "trouve en " << iter << " iterations !"<< endl;
+                exit(0);
+            }
+        }
+        cout << myPop << endl;
+    }
     
     cout << myPop << endl;
     
