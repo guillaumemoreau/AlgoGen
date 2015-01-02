@@ -11,6 +11,15 @@ using namespace std;
 #include "population.h"
 
 
+/**
+ comparateur externe utilisé en tant que pointeur de fonction qui se contente d'appeler
+ genome::estMeilleurQue(). 
+ 
+ @todo remplacer par un prédicat
+ @param a premier génôme à comparer
+ @param b second génôme à comparer
+ @return positif si a>b, négatif si b>a et nul si a==b
+*/
 bool compare_fnc(const genome *a,const genome *b) {
     return a->estMeilleurQue(b) > 0;
 }

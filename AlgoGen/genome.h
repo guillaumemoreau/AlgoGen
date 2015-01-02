@@ -43,6 +43,7 @@ public:
     
 };
 
+/// comparateur externe (utilisé en pointeur de fonction)
 bool compare_fnc(const genome *a,const genome *b);
 
 #endif
