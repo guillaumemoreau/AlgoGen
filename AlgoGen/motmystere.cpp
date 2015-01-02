@@ -47,7 +47,6 @@ void motmystere::mutation() {
  
  @param g génôme avec lequel on effectue le croisement
  @return le nouveau génôme issu du croisement
- @todo lancer une exception pour gérer les problèmes de type (et tester l'exception)
 */
 genome* motmystere::croisement(genome *g) {
     string tt;
@@ -57,11 +56,11 @@ genome* motmystere::croisement(genome *g) {
     }
     for (int i(n) ; i<tentative.length() ; i++) {
         motmystere *m = (motmystere*)(g);
-        if (g != nullptr) {
+        if (m != nullptr) {
             tt += m->tentative[i];
         }
         else {
-            cerr << "pb de type (1)" << endl;
+            throw "motmystere::estMeilleurQue() : le génôme fourni n'est pas un motmystere";
         }
     }
     motmystere *r = new motmystere(this->tentative.length());
@@ -74,7 +73,6 @@ genome* motmystere::croisement(genome *g) {
  
  @param g génôme avec lequel on se compare
  @return différence entre le nombre de lettres coïncidantes avec la solution
- @todo lancer une exception pour gérer les problèmes de type (et tester l'exception)
 */
 int  motmystere::estMeilleurQue(const genome* g) const {
     int n = 0;
@@ -82,8 +80,7 @@ int  motmystere::estMeilleurQue(const genome* g) const {
 
     motmystere *tmp = (motmystere *) g;
     if (tmp == nullptr) {
-        cerr << "erreur de type (2)" << endl;
-        return -1;
+        throw "motmystere::estMeilleurQue() : le génôme fourni n'est pas un motmystere";
     }
     for (int i(0) ; i<tentative.length() ; i++) {
         if (tentative[i] == motMystere[i]) {
