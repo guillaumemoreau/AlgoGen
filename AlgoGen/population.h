@@ -50,6 +50,8 @@ public:
 
 ostream& operator<<(ostream& o,const population& p);
 
+
+/// fonction de débuggage
 void debugAfficheVecteur(vector<genome*> l);
 
 #endif /* defined(__AlgoGen__population__) */

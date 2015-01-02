@@ -11,18 +11,19 @@ using namespace std;
 #include "population.h"
 
 
-/**
- comparateur externe utilisé en tant que pointeur de fonction qui se contente d'appeler
- genome::estMeilleurQue(). 
- 
- @todo remplacer par un prédicat
- @param a premier génôme à comparer
- @param b second génôme à comparer
- @return positif si a>b, négatif si b>a et nul si a==b
-*/
-bool compare_fnc(const genome *a,const genome *b) {
-    return a->estMeilleurQue(b) > 0;
-}
+/// prédicat de comparaison utilisant un foncteur
+class comparePredicat {
+public:
+    /**
+     foncteur faisant une indirection sur la fonction estMeilleurQue
+     @param a premier génôme à comparer
+     @param b second génôme à comparer
+     @return positif si a>b, négatif si b>a et nul si a==b
+    */
+    bool operator()(const genome *a,const genome *b) {
+      return a->estMeilleurQue(b) > 0;
+    }
+};
 
 /**
  La sélection des n meilleurs est faite de façon "rude" : tri puis on prend les n meilleurs restants
@@ -45,7 +46,7 @@ vector<genome*> population::selection(vector<genome*> l1,int n) {
     // copie de l1 dans nBest
     copy(l1.begin(), l1.end(), l2.begin());
     // tri de l2
-    sort(l2.begin(), l2.end(), compare_fnc);
+    sort(l2.begin(), l2.end(), comparePredicat());
     // on garde les n meilleurs
     copy(l2.begin(), l2.begin()+n,nBest->begin());
     
