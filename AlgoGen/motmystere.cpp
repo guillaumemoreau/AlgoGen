@@ -15,6 +15,9 @@ using namespace std;
 float motmystere::tauxMutation = 0.08;
 string motmystere::motMystere = "alea";
 
+/**
+  constructeur : remplissage de la tentative avec des lettres choisies au hasard
+*/
 motmystere::motmystere(int n) {
     tentative = "";
     for (int i(0) ; i<n ; i++) {
@@ -24,6 +27,9 @@ motmystere::motmystere(int n) {
     }
 }
 
+/**
+ mutation : avec une proba de tauxMutation, on remplace une lettre au hasard
+*/
 void motmystere::mutation() {
     for (int i(0) ; i<tentative.length() ; i++) {
         float m = random()%10000;
@@ -35,6 +41,14 @@ void motmystere::mutation() {
     }
 }
 
+/**
+ croisement : on utilise les n premières lettres du premier génôme (n étant tiré au sort)
+ et les l-n dernières de l'autre
+ 
+ @param g génôme avec lequel on effectue le croisement
+ @return le nouveau génôme issu du croisement
+ @todo lancer une exception pour gérer les problèmes de type (et tester l'exception)
+*/
 genome* motmystere::croisement(genome *g) {
     string tt;
     int n = rand()%this->tentative.length();
@@ -55,6 +69,13 @@ genome* motmystere::croisement(genome *g) {
     return r;
 }
 
+/**
+ comparaison de deux génômes : différence entre le nombre de lettres coïncidantes avec la solution
+ 
+ @param g génôme avec lequel on se compare
+ @return différence entre le nombre de lettres coïncidantes avec la solution
+ @todo lancer une exception pour gérer les problèmes de type (et tester l'exception)
+*/
 int  motmystere::estMeilleurQue(const genome* g) const {
     int n = 0;
     int m = 0;
@@ -80,6 +101,11 @@ ostream& operator<<(ostream &o,const motmystere& m) {
     return o;
 }
 
+/**
+ vérifie l'égalité entre la tentative et la solution
+ 
+ @return vrai si la solution a été trouvée
+*/
 bool motmystere::found() {
     return this->tentative == motmystere::motMystere;
 }

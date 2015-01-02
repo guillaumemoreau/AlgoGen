@@ -26,7 +26,7 @@ bool compare_fnc(const genome *a,const genome *b) {
 
 /**
  La sélection des n meilleurs est faite de façon "rude" : tri puis on prend les n meilleurs restants
-@param l liste de génômes
+@param l1 liste de génômes
 @param n nombre à sélectionner
 @return liste des meilleurs génômes
 */
@@ -58,7 +58,7 @@ vector<genome*> population::selection(vector<genome*> l1,int n) {
 /**
  Choix de n couples de génômes puis appel de la fonction genome::croisement(). On vérifie juste qu'un génôme
  ne se reproduit pas avec lui-même.
- @param l liste de génômes qui vont se reproduire
+ @param l1 liste de génômes qui vont se reproduire
  @param n nombre de génômes à produire
  @return liste de n génômes produits par croisement d'éléments de liste passée en paramètres
  */
@@ -82,7 +82,7 @@ vector<genome*> population::reproduction(vector<genome*> l1,int n) {
  simple boucle et appel de la fonction de mutation pour chacun.
  
  @todo utiliser un foncteur pour appliquer la mutation à chaque élément de la liste
- @param l liste des éléments à muter
+ @param l1 liste des éléments à muter
  @return liste des éléments mutés
 */
 vector<genome*> population::mutation(vector<genome*> l1) {

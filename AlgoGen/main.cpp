@@ -12,8 +12,17 @@ using namespace std;
 #include "motmystere.h"
 #include "population.h"
 
+/// taille de la population qui sera utilisée
 const int popSize = 10;
 
+/** fonction principale.
+ 
+ La fonction main() crée une population initiale, initialise le mot à rechercher et lance quelques milliers 
+ d'itérations. Les paramètres sont à ajuster pour faire une véritable recherche ou simplement débugger 
+ l'application
+ 
+ NB : rien ne prouve la convergence...
+*/
 int main(int argc, const char * argv[]) {
 
     motmystere::setMotMystere("alea");
