@@ -11,7 +11,7 @@
 		A319B0F91A06929500124BEB /* population.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0F71A06929500124BEB /* population.cpp */; };
 		A319B0FC1A069C3900124BEB /* motmystere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0FA1A069C3900124BEB /* motmystere.cpp */; };
 		A319B1041A06C1F400124BEB /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B1031A06C1F400124BEB /* main.cpp */; };
-		A38B0C001A4813EB00154773 /* gtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38B0BFF1A4813EB00154773 /* gtest.framework */; };
+		A38B0C041A56B47600154773 /* gtest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A38B0C031A56B47600154773 /* gtest.framework */; };
 		A3CBC3981A457AC7009AAF93 /* population.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0F71A06929500124BEB /* population.cpp */; };
 		A3CBC3991A457ACB009AAF93 /* motmystere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A319B0FA1A069C3900124BEB /* motmystere.cpp */; };
 /* End PBXBuildFile section */
@@ -47,7 +47,7 @@
 		A319B0FB1A069C3900124BEB /* motmystere.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = motmystere.h; sourceTree = "<group>"; };
 		A319B1011A06C1F400124BEB /* AlgoGenTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AlgoGenTests; sourceTree = BUILT_PRODUCTS_DIR; };
 		A319B1031A06C1F400124BEB /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		A38B0BFF1A4813EB00154773 /* gtest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = gtest.framework; sourceTree = "<group>"; };
+		A38B0C031A56B47600154773 /* gtest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gtest.framework; path = ../../../local/Frameworks/gtest.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A38B0C001A4813EB00154773 /* gtest.framework in Frameworks */,
+				A38B0C041A56B47600154773 /* gtest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +103,7 @@
 		A319B1021A06C1F400124BEB /* AlgoGenTests */ = {
 			isa = PBXGroup;
 			children = (
-				A38B0BFF1A4813EB00154773 /* gtest.framework */,
+				A38B0C031A56B47600154773 /* gtest.framework */,
 				A319B1031A06C1F400124BEB /* main.cpp */,
 			);
 			path = AlgoGenTests;
@@ -301,6 +301,7 @@
 					/Users/moreau/dev/local/Frameworks,
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/gtest-ahmzyceqthsnhafvvpteafspurih/Build/Products/Debug",
 					"$(PROJECT_DIR)/AlgoGenTests",
+					/Users/moreau/dev/Frameworks,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -318,6 +319,7 @@
 					/Users/moreau/dev/local/Frameworks,
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/gtest-ahmzyceqthsnhafvvpteafspurih/Build/Products/Debug",
 					"$(PROJECT_DIR)/AlgoGenTests",
+					/Users/moreau/dev/Frameworks,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
