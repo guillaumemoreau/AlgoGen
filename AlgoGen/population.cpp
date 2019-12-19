@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Guillaume Moreau. All rights reserved.
 //
 #include <iostream>
+#include <algorithm>
+
 using namespace std;
 
 #include "population.h"
@@ -34,25 +36,25 @@ public:
 vector<genome*> population::selection(vector<genome*> l1,int n) {
     vector<genome*> *nBest = new vector<genome*>(n);
     vector<genome*> l2(l1.size());
-    
+
     cout << "population::selection() - input" << endl;
     debugAfficheVecteur(l1);
-    
+
     if (l1.size() < n) {
         cerr << "Pb de taille" << endl;
         //@TODO : il faudra penser à lancer une exception ici !
     }
-    
+
     // copie de l1 dans nBest
     copy(l1.begin(), l1.end(), l2.begin());
     // tri de l2
     sort(l2.begin(), l2.end(), comparePredicat());
     // on garde les n meilleurs
     copy(l2.begin(), l2.begin()+n,nBest->begin());
-    
+
     cout << "resultat de selection :" << endl;
     debugAfficheVecteur(*nBest);
-    
+
     return *nBest;
 }
 
@@ -65,39 +67,39 @@ vector<genome*> population::selection(vector<genome*> l1,int n) {
  */
 vector<genome*> population::reproduction(vector<genome*> l1,int n) {
     vector<genome*> *repList = new vector<genome*>();
-    
+
     for (int i(0) ; i<n ; i++) {
         int i1 = rand()%l1.size();
         int i2 = rand()%l1.size();
         while (i2 == i1) {
             i2 = rand()%l1.size();
         }
-        
+
         repList->push_back(l1[i1]->croisement(l1[i2]));
     }
-    
+
     return *repList;
 }
 
 /**
  simple boucle et appel de la fonction de mutation pour chacun.
- 
+
  @todo utiliser un foncteur pour appliquer la mutation à chaque élément de la liste
  @param l1 liste des éléments à muter
  @return liste des éléments mutés
 */
 vector<genome*> population::mutation(vector<genome*> l1) {
-    
+
     cout << "population::mutation - input" << endl;
     debugAfficheVecteur(l1);
-    
+
     for (genome*& g : l1) {
         g->mutation();
     }
-    
+
     cout << "population::mutation - output" << endl;
     debugAfficheVecteur(l1);
-    
+
     return l1;
 }
 
@@ -105,21 +107,21 @@ vector<genome*> population::mutation(vector<genome*> l1) {
 vector<genome*> population::generation(vector<genome*> l1,int n,int m) {
     cout << "population::generation() - input" << endl;
     debugAfficheVecteur(l1);
-    
+
     vector<genome*> best = this->selection(l1,m);
-    
+
     cout << "population::generation() - selection" << endl;
     debugAfficheVecteur(best);
-    
+
     vector<genome*> croisements = this->reproduction(best, n-m);
-    
+
     cout << "population::generation() - croisements" << endl;
     debugAfficheVecteur(croisements);
-    
+
     for (genome*& g : croisements) {
         best.push_back(g);
     }
-    
+
     this->mutation(best);
     return best;
 }
